@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #canvas-container {
+            border: 1px solid #ccc;
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        #canvas {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ccc;
+        }
+
+        /* Add some basic styling to our controls */
+        #controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #controls label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #controls input[type="number"] {
+            width: 50px;
+            height: 20px;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #add-image-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #add-image-button:hover {
+            background-color: #3e8e41;
+        }
+
+        #image-input {
+          display: none;
+        }
+
+        .grabbing {
+            cursor: grabbing;
+        }
+    </style>
+</head>
+<body>
+    <h1>RPG tabletop made by Gustavo</h1>
+    <div id="canvas-container">
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <img id="image" alt="Image" src="" style="display:none;">
+    </div>
+    <input accept="image/*" id="image-input" type="file">
+    <button id="add-image-button">Add Image</button>
+    <div id="controls">
+        <label for="x">X:</label>
+        <input id="x" type="number" value="0">
+        <label for="y">Y:</label>
+        <input id="y" type="number" value="0">
+        <label for="size">Size:</label>
+        <input id="size" type="number" value="100">
+        <label for="rotation">Rotation:</label>
+        <input id="rotation" type="number" value="0">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
