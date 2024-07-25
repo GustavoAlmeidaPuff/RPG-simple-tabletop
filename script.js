@@ -260,3 +260,23 @@ document.addEventListener('keydown', (e) => {
     drawImages();
   }
 });
+
+//github hover code
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hoverElement = document.querySelector(".hover-element");
+  const tooltip = document.getElementById("tooltip");
+
+  hoverElement.addEventListener("mouseover", () => {
+    tooltip.style.display = "block";
+  });
+
+  hoverElement.addEventListener("mouseout", () => {
+    tooltip.style.display = "none";
+  });
+
+  hoverElement.addEventListener("mousemove", (e) => {
+    tooltip.style.left = `${e.pageX + 10}px`;
+    tooltip.style.top = `${e.pageY + 10}px`;
+  });
+});

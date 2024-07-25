@@ -6,6 +6,12 @@
     <title>canvas</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        @font-face {
+            font-family: 'gothic';
+            src: url('./assets/fonts/Ancient\ Medium.ttf') format('woff'),
+        }
+
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -66,10 +72,62 @@
         .grabbing {
             cursor: grabbing;
         }
+
+        /*header*/
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'gothic',Arial, Helvetica, sans-serif;
+            font-size: 3.5em;
+            cursor: default;
+            user-select: none;
+        }
+        
+        .header-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 60%;
+            height: 4em;
+        }
+
+        header img {
+            width: 50px;
+        }
+
+        .hover-element {
+            text-align: center;
+            line-height: 100px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: gray;
+            color: white;
+            padding: 5px;
+            border-radius: 2.5px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+
     </style>
 </head>
 <body>
-    <h1>RPG tabletop made by Gustavo</h1>
+    <header>
+        <nav class="header-nav">
+            <h1>RPG tabletop made by Gustavo</h1>
+            <a on target="_blank" href="https://github.com/GustavoAlmeidaPuff/RPG-simple-tabletop"><img class="hover-element" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt=""></a>
+            <span class="tooltip" id='tooltip' style="display: none;">see the code in github</span>
+        </nav>
+    </header>
     <div id="canvas-container">
         <canvas id="canvas" width="800" height="600"></canvas>
         <img id="image" alt="Image" src="" style="display:none;">
